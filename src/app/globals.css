@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1b;
+  --muted: #6b6f72;
+  --line: #d3d6da;
+  --line-strong: #878a8c;
+  --surface: #f6f7f8;
+  --correct: #6aaa64;
+  --present: #c9b458;
+  --absent: #787c7e;
+  --on-color: #ffffff;
+  --backdrop: rgb(255 255 255 / 0.6);
+}
+
+.dark {
+  --bg: #121213;
+  --fg: #f4f4f5;
+  --muted: #9a9ca0;
+  --line: #3a3a3c;
+  --line-strong: #565758;
+  --surface: #1c1c1e;
+  --correct: #538d4e;
+  --present: #b59f3b;
+  --absent: #3a3a3c;
+  --on-color: #ffffff;
+  --backdrop: rgb(0 0 0 / 0.55);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-surface: var(--surface);
+  --color-correct: var(--correct);
+  --color-present: var(--present);
+  --color-absent: var(--absent);
+  --color-on-color: var(--on-color);
+  --color-backdrop: var(--backdrop);
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-fraunces);
+
+  --animate-flip-in: flip-in 380ms ease-out both;
+  --animate-shake: shake 420ms ease-in-out;
+  --animate-bounce-up: bounce-up 700ms ease both;
+  --animate-pop: pop 120ms ease-out;
+  --animate-fade-in: fade-in 160ms ease-out both;
+  --animate-rise-in: rise-in 220ms ease-out both;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+@keyframes flip-in {
+  0% { transform: rotateX(-90deg); }
+  100% { transform: rotateX(0); }
+}
+
+@keyframes shake {
+  10%, 90% { transform: translateX(-2px); }
+  20%, 80% { transform: translateX(4px); }
+  30%, 50%, 70% { transform: translateX(-6px); }
+  40%, 60% { transform: translateX(6px); }
+}
+
+@keyframes bounce-up {
+  0%, 20% { transform: translateY(0); }
+  40% { transform: translateY(-22px); }
+  50% { transform: translateY(4px); }
+  60% { transform: translateY(-10px); }
+  80% { transform: translateY(2px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
+  }
+}

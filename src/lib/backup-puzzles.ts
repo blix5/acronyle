@@ -1,0 +1,23 @@
+/** Hand-written puzzles used only if Claude can't produce a valid one. */
+export const BACKUP_PUZZLES: { phrase: string; clue: string }[] = [
+  { phrase: "I don't even care if you did that though", clue: "Texted with a shrug and zero follow-up questions" },
+  { phrase: "Money doesn't grow on trees you know", clue: "Heard right after asking for something at the checkout" },
+  { phrase: "Can everyone see my screen right now", clue: "The first thirty seconds of every video call" },
+  { phrase: "The early bird gets the worm", clue: "Advice for people who hate their alarm clock" },
+  { phrase: "Are we still going out tonight or not", clue: "Sent at 6pm when nobody has confirmed anything" },
+  { phrase: "We are not stopping until we get there", clue: "Announced from the front seat of the car" },
+  { phrase: "Don't count your chickens before they hatch", clue: "A warning to anyone celebrating too soon" },
+  { phrase: "Let's circle back on that after lunch", clue: "Meeting-speak for not dealing with it now" },
+  { phrase: "You haven't seen the last of me yet", clue: "Shouted dramatically while leaving the room" },
+  { phrase: "Every cloud has a silver lining", clue: "Said when something bad might turn out fine" },
+  { phrase: "Just checking in to see if you saw my email", clue: "A polite nudge with an edge to it" },
+  { phrase: "Finally Friday and I am not doing anything", clue: "The plan for the weekend is no plan at all" },
+  { phrase: "Because I said so that is why", clue: "The final answer in any argument with a parent" },
+  { phrase: "I told you this would happen and nobody listened", clue: "Vindicated, and making sure everyone knows it" },
+  { phrase: "Don't make me turn this car around", clue: "A threat from the driver's seat" },
+  { phrase: "Better late than never I suppose", clue: "Said when someone finally shows up" },
+  { phrase: "Lol wait did you actually say that to him", clue: "Group chat reaction to some spicy news" },
+  { phrase: "This could have been an email honestly", clue: "Muttered as a meeting finally ends" },
+  { phrase: "Two wrongs don't make a right", clue: "What you say to stop someone getting even" },
+  { phrase: "Who wants to grab food after this", clue: "The best question near the end of anything" },
+];
