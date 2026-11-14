@@ -1,6 +1,6 @@
 # Acronyle
 
-A daily word game. You get an acronym like **IDECIYDTT** and a short clue, and you guess the word behind every letter ("I don't even care if you did that though").
+A daily word game. You get an acronym like **IDECIYDTT** and guess the word behind every letter ("I don't even care if you did that though"). A short clue unlocks after your third guess.
 
 - **Green**: right word, right spot (locked in for your next guess)
 - **Yellow**: the word is in the phrase, but in another spot
@@ -47,6 +47,7 @@ npm run build
 2. In the project, open **Storage → Marketplace → Upstash (Redis)** and connect a database. That adds `KV_REST_API_URL` and `KV_REST_API_TOKEN`.
 3. Add `ANTHROPIC_API_KEY` and `CRON_SECRET` under **Settings → Environment Variables**.
 4. Deploy. The cron in `vercel.json` is picked up automatically.
+5. Open the **Analytics** tab and click **Enable**. The `<Analytics />` component in `src/app/layout.tsx` starts sending page views on the next deploy.
 
 ## Project layout
 
