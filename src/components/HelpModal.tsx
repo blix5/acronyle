@@ -24,14 +24,13 @@ export default function HelpModal({ open, onClose }: { open: boolean; onClose: (
     <Modal title="How to play" open={open} onClose={onClose}>
       <div className="space-y-4 text-[0.95rem] leading-relaxed">
         <p>
-          Each day there&apos;s a hidden phrase. You only see the <strong>first letter of every word</strong>. Guess
-          every word to solve it.
+          Each day there&apos;s a hidden phrase. You only see the <strong>first letter of every word</strong>, plus a
+          clue. Guess every word to solve it.
         </p>
         <ul className="list-disc space-y-1 pl-5">
           <li>Type one word per box. Space or Tab jumps to the next box, Enter submits.</li>
           <li>Each word must start with its letter. Capitals and punctuation don&apos;t matter: “dont” = “don&apos;t”.</li>
           <li>Longer acronyms get more guesses.</li>
-          <li>Stuck? A hint unlocks after your third guess.</li>
         </ul>
         <div>
           <p className="mb-2 font-semibold">Example: IDECIYDTT</p>

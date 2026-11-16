@@ -4,15 +4,12 @@ export default function AcronymBanner({
   number,
   theme,
   clue,
-  guessesUntilHint,
 }: {
   acronym: string;
   solved: boolean[];
   number: number;
   theme: string;
   clue: string;
-  /** 0 shows the clue; otherwise how many more guesses until it unlocks. */
-  guessesUntilHint: number;
 }) {
   // Shrink letters for long acronyms so they stay on one line on phones.
   const size = `min(2.75rem, calc((100vw - 2rem) / ${Math.max(acronym.length, 6) * 0.82}))`;
@@ -35,15 +32,7 @@ export default function AcronymBanner({
           </span>
         ))}
       </div>
-      {guessesUntilHint === 0 ? (
-        <p className="max-w-md animate-fade-in text-[0.95rem] text-muted italic">
-          <span className="font-semibold not-italic">Hint:</span> “{clue}”
-        </p>
-      ) : (
-        <p className="text-sm text-muted">
-          Hint unlocks after {guessesUntilHint} more {guessesUntilHint === 1 ? "guess" : "guesses"}
-        </p>
-      )}
+      <p className="max-w-md text-[0.95rem] text-muted italic">“{clue}”</p>
     </section>
   );
 }

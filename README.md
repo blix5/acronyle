@@ -1,6 +1,6 @@
 # Acronyle
 
-A daily word game. You get an acronym like **IDECIYDTT** and guess the word behind every letter ("I don't even care if you did that though"). A short clue unlocks after your third guess.
+A daily word game. You get an acronym like **IDECIYDTT** and a short clue, and you guess the word behind every letter ("I don't even care if you did that though").
 
 - **Green**: right word, right spot (locked in for your next guess)
 - **Yellow**: the word is in the phrase, but in another spot

@@ -33,7 +33,6 @@ type Load =
 const WIN_WORDS = ["Genius!", "Magnificent!", "Impressive!", "Splendid!", "Great!", "Nice!", "Solid!", "Got it!", "Close one!", "Phew!"];
 const FLIP_MS = 110;
 const FLIP_DURATION = 380;
-const HINT_AFTER = 3;
 
 function lockedWords(answer: string[], marks: SavedGame["marks"]): (string | null)[] {
   return answer.map((word, i) => (marks.some((row) => row[i] === "correct") ? word : null));
@@ -214,10 +213,6 @@ export default function Game() {
               number={ready.puzzle.number}
               theme={ready.puzzle.theme}
               clue={ready.puzzle.clue}
-              // Count a row only once its flip finishes; always show the hint once the game is over.
-              guessesUntilHint={
-                finished && !revealing ? 0 : Math.max(0, HINT_AFTER - (game.guesses.length - (revealing ? 1 : 0)))
-              }
             />
 
             <Board

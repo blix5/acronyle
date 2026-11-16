@@ -8,7 +8,7 @@ import { MAX_WORDS, MIN_WORDS } from "./rules";
 import type { StoredPuzzle } from "./store";
 import { themeFor } from "./themes";
 
-const MODEL = "claude-opus-5-5";
+const MODEL = "claude-haiku-5-5";
 const MAX_ATTEMPTS = 3;
 
 const PuzzleOutput = z.object({
@@ -88,9 +88,8 @@ async function askClaude(
 
   const response = await client.beta.messages.parse({
     model: MODEL,
-    max_tokens: 16000,
-    betas: ["server-side-fallback-2026-07-01"],
-    fallbacks: "default",
+    // The answer is a short JSON object; this leaves room for thinking without letting a run go long.
+    max_tokens: 4000,
     output_config: { effort: "medium", format: betaZodOutputFormat(PuzzleOutput) },
     system: SYSTEM,
     messages: [
