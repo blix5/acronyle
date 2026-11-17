@@ -10,7 +10,7 @@ Longer acronyms get more guesses: `ceil(words / 2) + 2`, between 4 and 10.
 
 ## How it works
 
-- **Puzzle generation**: once per day, `claude-opus-5-5` writes a phrase and a clue for that weekday's theme (`src/lib/themes.ts`). The server checks it (6–16 words, no digits, clue doesn't leak words, not a recent repeat) and retries up to 3 times, then falls back to a hand-written list (`src/lib/backup-puzzles.ts`).
+- **Puzzle generation**: once per day, `claude-haiku-5-5` writes a phrase and a clue for that weekday's theme (`src/lib/themes.ts`). The server checks it (6–16 words, no digits, clue doesn't leak words, not a recent repeat) and retries up to 3 times, then falls back to a hand-written list (`src/lib/backup-puzzles.ts`).
 - **Storage**: puzzles are stored in Upstash Redis keyed by date, so everyone gets the same one. Without Redis env vars it uses an in-memory store (fine for local dev).
 - **Serving**: `GET /api/puzzle?date=YYYY-MM-DD` returns the acronym, clue and an obfuscated answer. Only UTC yesterday/today/tomorrow are served (covering every timezone), so players can't fetch future puzzles.
 - **Checking guesses** happens in the browser in plain code (`src/lib/scoring.ts`), with no API call per guess. The answer is obfuscated, not encrypted: someone determined could decode it.
